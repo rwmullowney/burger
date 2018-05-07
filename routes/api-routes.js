@@ -35,4 +35,19 @@ module.exports = function (app) {
                 res.json(dbBurgers);
             });
     });
+
+    // Updates burger as devoured
+    app.put("/", function (req, res) {
+        console.log(req.body);
+        burgers.update({
+            devoured: true
+        }, {
+                where: {
+                    id: req.body.id
+                }
+            })
+            .then(function (dbBurgers) {
+                res.json(dbBurgers);
+            });
+    });
 };
