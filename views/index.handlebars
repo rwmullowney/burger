@@ -1,0 +1,33 @@
+<h1>Eat-Da-Burger</h1>
+
+<h3>View Burgers</h3>
+
+<h5>Uneaten Burgers:</h5>
+<ul>
+  {{#each uneatenBurgers}}
+  	<li>
+  	   <p>ID: {{this.id}}</p>
+       <p>Burger: {{this.burger_name}}</p>
+       <p>Devoured: {{this.devoured}}</p>
+  	</li>
+  {{/each}}
+</ul>
+
+<h5>Devoured Burgers:</h5>
+<ul>
+  {{#each eatenBurgers}}
+  	<li>
+  	   <p>ID: {{this.id}}</p>
+       <p>Burger: {{this.burger_name}}</p>
+       <p>Devoured: {{this.devoured}}</p>
+  	</li>
+  {{/each}}
+</ul>
+
+<div>
+  <form action="/" method="POST">
+  	<textarea type="text" name="wish"></textarea>
+
+  	<button type="submit">Submit</button>
+  </form>
+</div>
