@@ -9,9 +9,12 @@ Might be smarter to just give manual info to the seeds to workaround this
 module.exports = function (sequelize, DataTypes) {
     var Burgers = sequelize
         .define("Burger", {
- 
-                burger_name: DataTypes.STRING,
-                devoured: DataTypes.BOOLEAN
-            });
+            // Add validation for burger_name here
+            burger_name: DataTypes.STRING,
+            devoured: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+        });
     return Burgers;
 }
