@@ -29,8 +29,12 @@
       <ul>
         {{#each uneatenBurgers}}
         <li>
-          <h5 class="mb-1">{{this.burger_name}}</h5>
-          <button type="button" class="btn btn-danger p-1 mb-2" id="{{this.id}}">Devour Burger</button>
+          <div class="container">
+            <div class="row mb-1">
+              <h5 class="mr-1 font-weight-light">{{this.burger_name}} | </h5>
+              <button type="button" class="btn btn-danger p-1" id="{{this.id}}">Devour Burger</button>
+            </div>
+          </div>
         </li>
         {{/each}}
       </ul>
@@ -40,20 +44,24 @@
       <ul>
         {{#each eatenBurgers}}
         <li>
-          <p>{{this.burger_name}}</p>
+          <h5 class="font-weight-light">{{this.burger_name}}</h5>
         </li>
         {{/each}}
       </ul>
     </div>
-  
+
 
     <div class="col-2">
-      <textarea type="text" id="newBurger"></textarea>
-
-      <button type="submit" class="submitBurger">Submit</button>
-
+      <h4>Create Burger:</h4>
+      <div class="form-group row">
+          <input class="form-control ml-3" type="text" placeholder="Enter your burger!" id="newBurger">
       </div>
-</div>
+      {{!-- <textarea type="text" id="newBurger"></textarea> --}}
+
+      <button type="submit" class="btn btn-primary submitBurger">Submit</button>
+
+    </div>
+  </div>
 </div>
 
 {{!-- Require my JS from the /public/ folder --}}

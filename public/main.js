@@ -1,5 +1,4 @@
-// Add the user's burger on button click
-$(".submitBurger").on('click', function (event) {
+var submitBurger = function(){
     event.preventDefault();
     console.log("The button is clicked")
 
@@ -17,7 +16,20 @@ $(".submitBurger").on('click', function (event) {
         // Works through the browser to refresh the page
         location.reload();
     });
+}
+
+// Add the user's burger on button click
+$(".submitBurger").on('click', function (event) {
+    submitBurger();
 });
+
+$('.submitBurger').keypress(function (e) {
+    if (e.which == 13) {
+      submitBurger();
+    }
+  });
+
+
 
 //   Update burger as "devoured" on button click
 $(".btn-danger").on('click', function (event) {
