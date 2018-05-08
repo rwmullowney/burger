@@ -1,33 +1,59 @@
-<h1>Eat-Da-Burger</h1>
+<header>
+  <div class="container text-center">
+    <img src=".assets/img/" alt="">
+    <div class="row justify-content-center">
+      <img src="./assets/img/burgerbanner.png" alt="">
+      <img src="./assets/img/burgerbanner.png" alt="">
+      <img src="./assets/img/burgerbanner.png" alt="">
+    </div>
+    <img class="mt-3" style="max-height: 175px; max-width: 175px" src="./assets/img/burgerbuddy.png" alt="A 'Burger Buddy' company logo">
+    <h1>Burger Buddy</h1>
+  </div>
+</header>
+<hr>
+<br>
+<div class="container text-center">
+  <p>On this page, you can add burgers to your "Uneaten Burgers" list by entering them in the field below!</p>
+  <p>Then, you can devour them to move them to the "Eaten Burgers" list.</p>
+</div>
+<br>
 
-<h3>View Burgers</h3>
 
-<h5>Uneaten Burgers:</h5>
-<ul>
-  {{#each uneatenBurgers}}
-  <li>
-    <p>Burger: {{this.burger_name}}</p>
-    <button type="button" class="btn btn-danger" id="{{this.id}}">Devour Burger</button>
-  </li>
-  {{/each}}
-</ul>
+<h2 class="text-center">Burgers</h2>
+<hr>
 
-<h5>Devoured Burgers:</h5>
-<ul>
-  {{#each eatenBurgers}}
-  <li>
-    <p>Burger: {{this.burger_name}}</p>
-  </li>
-  {{/each}}
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <h3>Uneaten Burgers:</h3>
+      <ul>
+        {{#each uneatenBurgers}}
+        <li>
+          <h5 class="mb-1">{{this.burger_name}}</h5>
+          <button type="button" class="btn btn-danger p-1 mb-2" id="{{this.id}}">Devour Burger</button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-5">
+      <h3>Eaten Burgers:</h3>
+      <ul>
+        {{#each eatenBurgers}}
+        <li>
+          <p>{{this.burger_name}}</p>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  
 
-<div>
-  {{!--
-  <form action="/" method="POST"> --}}
-    <textarea type="text" id="newBurger"></textarea>
+    <div class="col-2">
+      <textarea type="text" id="newBurger"></textarea>
 
-    <button type="submit" class="submitBurger">Submit</button>
-    {{!-- </form> --}}
+      <button type="submit" class="submitBurger">Submit</button>
+
+      </div>
+</div>
 </div>
 
 {{!-- Require my JS from the /public/ folder --}}
